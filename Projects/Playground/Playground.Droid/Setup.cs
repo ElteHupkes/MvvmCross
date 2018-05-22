@@ -4,10 +4,13 @@
 
 using System.Collections.Generic;
 using System.Reflection;
+using Android.Content;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using MvvmCross.Droid.Support.V7.RecyclerView;
 using MvvmCross.Logging;
+using MvvmCross.Platforms.Android.Views;
 using Playground.Core;
+using Playground.Droid.Views;
 using Serilog;
 
 namespace Playground.Droid
@@ -30,6 +33,11 @@ namespace Playground.Droid
                 .WriteTo.AndroidLog()
                 .CreateLogger();
             return base.CreateLogProvider();
+        }
+
+        protected override IMvxAndroidViewsContainer CreateViewsContainer(Context applicationContext)
+        {
+            return new CustomViewsContainer(applicationContext);
         }
     }
 }

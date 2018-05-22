@@ -86,6 +86,13 @@
                 android:layout_marginTop="10dp"
                 android:text="Show Shared Element transition"
                 local:MvxBind="Click ShowSharedElementsCommand;" />
+        
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Open ClearTop view"
+                local:MvxBind="Click ShowClearTopViewCommand;" />
         </LinearLayout>
     </ScrollView>
 

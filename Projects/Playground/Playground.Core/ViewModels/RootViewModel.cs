@@ -51,6 +51,8 @@ namespace Playground.Core.ViewModels
 
             ShowSharedElementsCommand = new MvxAsyncCommand(async () => await _navigationService.Navigate<SharedElementRootChildViewModel>());
 
+            ShowClearTopViewCommand = new MvxAsyncCommand(async () => await _navigationService.Navigate<ClearTopViewModel>());
+
             _counter = 3;
         }
 
@@ -132,6 +134,8 @@ namespace Playground.Core.ViewModels
         public IMvxAsyncCommand ShowContentViewCommand => new MvxAsyncCommand(async () => await _navigationService.Navigate<ParentContentViewModel>());
 
         public IMvxAsyncCommand ShowSharedElementsCommand { get; private set; }
+
+        public IMvxAsyncCommand ShowClearTopViewCommand { get; private set; }
 
         private async Task Navigate()
         {
